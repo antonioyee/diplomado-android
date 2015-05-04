@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Profile Page</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="nombre">Antonio Yee</string>
+    <string name="telefono">6671265734</string>
+    <string name="email">yee.antonio@gmail.com</string>
+    <string name="twitter">\@antonioyee</string>
+</resources>
