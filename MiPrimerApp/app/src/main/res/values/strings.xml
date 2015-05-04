@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Mi Primer App</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="hello_yee">Hola Yee</string>
+    <string name="hello_antonio">Hola Ricardo</string>
+</resources>
