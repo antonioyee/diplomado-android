@@ -1,0 +1,82 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/ImgPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@mipmap/yee"
+            android:paddingBottom="@dimen/medium_padding"/>
+
+        <TextView
+            android:id="@+id/textName"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textPhone"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/textTwitter"
+            android:text="@string/hello_world"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/medium_font"
+            android:paddingBottom="@dimen/small_padding"
+            android:gravity="center"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:text="@string/left_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"/>
+
+        <Button
+            android:id="@+id/btnNext"
+            android:text="@string/right_row"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"/>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
