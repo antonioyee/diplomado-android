@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     Double oper1 = 0.0, oper2 = 0.0;
     Boolean flagOper = true;
     int typeOper = 0;
-    final int PLUS = 1, LESS = 2;
+    final int PLUS = 1, LESS = 2, MULTIPLY = 3, DIVISION = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,102 +120,31 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.btnEqual:
 
                 switch(typeOper){
-
-                    case PLUS:
-                        if(oper1==0.0){
-                            oper1 = Double.valueOf(textResult.getText().toString());
-                            flagOper = false;
-                            return;
-                        }else if(flagOper){
-                            oper2 = Double.valueOf(textResult.getText().toString());
-
-                        }
-
-                        if(oper2!=0.0){
-                            Double operation = oper1+oper2;
-                            textResult.setText(operation.toString());
-                            oper1=operation;
-                            oper2=0.0;
-
-                            flagOper = false;
-                            return;
-                        }
-                        break;
-
-                    case LESS:
-                        if(oper1==0.0){
-                            oper1 = Double.valueOf(textResult.getText().toString());
-                            flagOper = false;
-                            return;
-                        }else if(flagOper){
-                            oper2 = Double.valueOf(textResult.getText().toString());
-
-                        }
-
-                        if(oper2!=0.0){
-                            Double operation = oper1 - oper2;
-                            textResult.setText(operation.toString());
-                            oper1=operation;
-                            oper2=0.0;
-
-                            flagOper = false;
-                            return;
-                        }
-                        break;
+                    case PLUS: suma(); break;
+                    case LESS: resta(); break;
+                    case MULTIPLY: multiplicacion(); break;
                 }
-
                 break;
 
             case R.id.btnPlus:
 
                 typeOper = PLUS;
 
-                if(oper1==0.0){
-                    oper1 = Double.valueOf(textResult.getText().toString());
-
-                    flagOper = false;
-                    return;
-                }else if(flagOper){
-                    oper2 = Double.valueOf(textResult.getText().toString());
-
-                }
-
-                if(oper2!=0.0){
-                    Double operation = oper1+oper2;
-                    textResult.setText(operation.toString());
-                    oper1=operation;
-                    oper2=0.0;
-
-                    flagOper = false;
-                    return;
-                }
-
+                suma();
                 break;
 
             case R.id.btnLess:
 
                 typeOper = LESS;
 
-                if(oper1==0.0){
-                    oper1 = Double.valueOf(textResult.getText().toString());
+                resta();
+                break;
 
-                    flagOper = false;
-                    return;
-                }else if(flagOper){
-                    oper2 = Double.valueOf(textResult.getText().toString());
+            case R.id.btnMultiply:
 
-                }
+                typeOper = MULTIPLY;
 
-                if(oper2!=0.0){
-                    Double operation = oper1 - oper2;
-                    textResult.setText(operation.toString());
-                    oper1=operation;
-                    oper2=0.0;
-
-                    flagOper = false;
-                    return;
-                }
-
+                multiplicacion();
                 break;
 
             default:
@@ -226,10 +155,75 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                     textResult.setText(btnTemp.getText().toString());
                     flagOper = true;
                 }
-
                 break;
 
         }
 
+    }
+
+    public void suma(){
+        if(oper1==0.0){
+            oper1 = Double.valueOf(textResult.getText().toString());
+
+            flagOper = false;
+            return;
+        }else if(flagOper){
+            oper2 = Double.valueOf(textResult.getText().toString());
+
+        }
+
+        if(oper2!=0.0){
+            Double operation = oper1+oper2;
+            textResult.setText(operation.toString());
+            oper1=operation;
+            oper2=0.0;
+
+            flagOper = false;
+            return;
+        }
+    }
+
+    public void resta(){
+        if(oper1==0.0){
+            oper1 = Double.valueOf(textResult.getText().toString());
+
+            flagOper = false;
+            return;
+        }else if(flagOper){
+            oper2 = Double.valueOf(textResult.getText().toString());
+
+        }
+
+        if(oper2!=0.0){
+            Double operation = oper1 - oper2;
+            textResult.setText(operation.toString());
+            oper1=operation;
+            oper2=0.0;
+
+            flagOper = false;
+            return;
+        }
+    }
+
+    public void multiplicacion(){
+        if(oper1==0.0){
+            oper1 = Double.valueOf(textResult.getText().toString());
+
+            flagOper = false;
+            return;
+        }else if(flagOper){
+            oper2 = Double.valueOf(textResult.getText().toString());
+
+        }
+
+        if(oper2!=0.0){
+            Double operation = oper1 * oper2;
+            textResult.setText(operation.toString());
+            oper1=operation;
+            oper2=0.0;
+
+            flagOper = false;
+            return;
+        }
     }
 }
