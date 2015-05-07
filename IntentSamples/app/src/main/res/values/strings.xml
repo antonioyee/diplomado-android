@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">IntentSamples</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="string_phone">Llamar</string>
+    <string name="string_email">Email</string>
+    <string name="string_facebook">Facebook</string>
+    <string name="string_browser">Browser</string>
+    <string name="string_cambio_pantalla">Pantalla</string>
+    <string name="string_compartir">Compartir</string>
+    <string name="string_camara">Camara</string>
+</resources>
