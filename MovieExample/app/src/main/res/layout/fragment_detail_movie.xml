@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="mx.antonioyee.movieexample.fragments.DetailMovieFragment"
+    android:id="@+id/linearContainer">
+
+    <ImageView
+        android:id="@+id/imgPoster"
+        android:layout_width="@dimen/poster_movie"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:src="@mipmap/ic_launcher"/>
+
+    <TextView
+        android:id="@+id/textTitleDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textSize="@dimen/big_font"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/textSynopsis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/hello_world"
+            android:textSize="@dimen/normal_font"/>
+
+    </ScrollView>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="@string/audience_score"
+        android:textSize="@dimen/small_font"/>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:id="@+id/ratingBarAudience"
+        android:isIndicator="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:gravity="center"
+        android:text="@string/critic_score"
+        android:textSize="@dimen/small_font"/>
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:id="@+id/ratingBarCritic"
+        android:isIndicator="true"/>
+
+</LinearLayout>

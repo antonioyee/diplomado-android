@@ -1,17 +1,29 @@
-package mx.antonioyee.movieexample;
+package mx.antonioyee.movieexample.Activities;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import mx.antonioyee.movieexample.Models.Movie;
+import mx.antonioyee.movieexample.R;
+import mx.antonioyee.movieexample.fragments.DetailMovieFragment;
+import mx.antonioyee.movieexample.fragments.ListMoviesFragment;
 
-public class MainActivity extends ActionBarActivity {
+
+public class MainActivity extends ActionBarActivity implements ListMoviesFragment.OnFragmentInteractionListener{
+
+    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.container, ListMoviesFragment.newInstance("Love"))
+                .commit();
     }
 
     @Override
@@ -34,5 +46,13 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onMovieSelected(Movie movie) {
+        fragmentManager.beginTransaction()
+                .addToBackStack(null)
+                .replace(R.id.container, DetailMovieFragment.newInstance(movie))
+                .commit();
     }
 }
